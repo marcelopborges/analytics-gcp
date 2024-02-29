@@ -1,4 +1,9 @@
-{{ config(materialized='view') }}
+{{ 
+    config(
+        materialized='view' ,
+        tags=['staging','dialy']
+    )
+}}
 
 
 with stg_projects_v2 as 
