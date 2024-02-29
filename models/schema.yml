@@ -1,0 +1,381 @@
+version: 2
+
+models:
+  - name: stg_activities_v2
+    description: "Tabela de staging para atividades, incluindo detalhes sobre o esforço, datas estimadas e reais, status e mais."
+    columns:
+      - name: _airbyte_raw_id
+        description: ID criado pelo airbyte para gerenciar dados duplicados.
+        data_type: string
+      - name: _airbyte_extracted_at
+        description: registro do horário que o dado foi extraído
+        data_type: timestamp
+      - name: _airbyte_meta
+        description: campo criado pelo airbyte para armazenar metadados, sendo eles, erros, timestamps e informações de origem.
+        data_type: json
+      - name: id
+        description: id da tabela
+        data_type: integer
+      - name: title
+        description: Título
+        data_type: string
+      - name: Sprint
+        description: Sprint
+        data_type: string
+      - name: status
+        description: Estado
+        data_type: boolean
+      - name: Release
+        description: Release
+        data_type: string
+      - name: user_id
+        description: ID Usuário Responsável pelas Views
+        data_type: integer
+      - name: priority
+        description: Prioridade
+        data_type: integer
+      - name: parent_id
+        description: ID Pasta/Projeto Acima
+        data_type: integer
+      - name: user_name
+        description: Usuário Responsável pelas Views
+        data_type: string
+      - name: account_id
+        description: "ID do Grupo de trabalho."
+        data_type: integer
+      - name: account_organization_id
+        description: "ID da Organização."
+        data_type: integer
+      - name: activity_base_last_completed_percent
+        description: "ULB % Completo."
+        data_type: float
+      - name: activity_base_last_effort
+        description: "ULB Esforço."
+        data_type: float
+      - name: activity_base_last_end
+        description: "ULB Término."
+        data_type: timestamp
+      - name: activity_base_last_start
+        description: "ULB Início."
+        data_type: timestamp
+      - name: activity_completed_percent
+        description: "% Completo."
+        data_type: float
+      - name: activity_created_at
+        description: "Data de criação."
+        data_type: timestamp
+      - name: activity_custom_status_id
+        description: "ID Situação."
+        data_type: integer
+      - name: activity_replanned_count
+        description: "Replanejamentos."
+        data_type: integer
+      - name: activity_status
+        description: "Estado (False = Aberto/True = Fechado)."
+        data_type: boolean
+      - name: activity_status_name
+        description: "Situação."
+        data_type: string
+      - name: activity_type_name
+        description: "Tipo de Atividade."
+        data_type: string
+      - name: activity_updated_at
+        description: "Última modificação."
+        data_type: timestamp
+      - name: actual_effort
+        description: "Esforço Real."
+        data_type: float
+      - name: actual_end
+        description: "Término Real."
+        data_type: date
+      - name: actual_start
+        description: "Início Real."
+        data_type: date
+      - name: aggregate_effort
+        description: "Esforço Agregado."
+        data_type: float
+      - name: base_1_completed_percent
+        description: "LB01 % Completo."
+        data_type: float
+      - name: base_1_effort
+        description: "LB01 Esforço."
+        data_type: float
+      - name: base_1_end
+        description: "LB01 Término."
+        data_type: timestamp
+      - name: base_1_start
+        description: "LB01 Início."
+        data_type: timestamp
+      - name: base_10_completed_percent
+        description: "LB10 % Completo."
+        data_type: float
+      - name: base_10_effort
+        description: "LB10 Esforço."
+        data_type: float
+      - name: base_10_end
+        description: "LB10 Término."
+        data_type: timestamp
+      - name: base_10_start
+        description: "LB10 Início."
+        data_type: timestamp
+      - name: base_2_completed_percent
+        description: "LB02 % Completo."
+        data_type: float
+      - name: base_2_end
+        description: "LB02 Término."
+        data_type: float
+      - name: base_2_effort
+        description: "LB02 Esforço."
+        data_type: timestamp
+      - name: base_2_start
+        description: "LB02 Início."
+        data_type: timestamp
+      - name: base_3_completed_percent
+        description: "LB03 % Completo."
+        data_type: float
+      - name: base_3_effort
+        description: "LB03 Esforço."
+        data_type: float
+      - name: base_3_end
+        description: "LB03 Término."
+        data_type: timestamp
+      - name: base_3_start
+        description: "LB03 Início."
+        data_type: timestamp
+      - name: base_4_completed_percent
+        description: "LB04 % Completo."
+        data_type: float
+      - name: base_4_effort
+        description: "LB04 Esforço."
+        data_type: float
+      - name: base_4_end
+        description: "LB04 Término."
+        data_type: timestamp
+      - name: base_4_start
+        description: "LB04 Início."
+        data_type: timestamp
+      - name: base_5_completed_percent
+        description: "LB05 % Completo."
+        data_type: float
+      - name: base_5_effort
+        description: "LB05 Esforço."
+        data_type: float
+      - name: base_5_end
+        description: "LB05 Término."
+        data_type: timestamp
+      - name: base_5_start
+        description: "LB05 Início."
+        data_type: timestamp
+      - name: base_6_completed_percent
+        description: "LB06 % Completo."
+        data_type: float
+      - name: base_6_effort
+        description: "LB06 Esforço."
+        data_type: float
+      - name: base_6_end
+        description: "LB06 Término."
+        data_type: timestamp
+      - name: base_6_start
+        description: "LB06 Início."
+        data_type: timestamp
+      - name: base_7_completed_percent
+        description: "LB07 % Completo."
+        data_type: float
+      - name: base_7_effort
+        description: "LB07 Esforço."
+        data_type: float
+      - name: base_7_end
+        description: "LB07 Término."
+        data_type: timestamp
+      - name: base_7_start
+        description: "LB07 Início."
+        data_type: timestamp
+      - name: base_8_completed_percent
+        description: "LB08 % Completo."
+        data_type: float
+      - name: base_8_effort
+        description: "LB08 Esforço."
+        data_type: float
+      - name: base_8_end
+        description: "LB08 Término."
+        data_type: timestamp
+      - name: base_8_start
+        description: "LB08 Início."
+        data_type: timestamp
+      - name: base_9_completed_percent
+        description: "LB09 % Completo."
+        data_type: float
+      - name: base_9_end
+        description: LB09 Término
+        data_type: float
+      - name: breadcrumb
+        description: Caminho
+        data_type: string
+      - name: created_at
+        description: Data de criação
+        data_type: datetime
+      - name: delay_days
+        description: Desvio do prazo
+        data_type: int
+      - name: updated_at
+        description: Última modificação
+        data_type: datetime
+      - name: description
+        description: Descrição
+        data_type: string
+      - name: object_type
+        description: Nome do objeto
+        data_type: string
+      - name: parent_name
+        description: Nome Pasta/Projeto Acima
+        data_type: string
+      - name: community_id
+        description: "ID do Grupo de trabalho."
+        data_type: int64
+      - name: actual_effort
+        description: "Esforço Real."
+        data_type: numeric
+      - name: base_10_start
+        description: "LB10 Início."
+        data_type: datetime
+      - name: base_1_effort
+        description: "LB01 Esforço."
+        data_type: numeric
+      - name: base_2_effort
+        description: "LB02 Esforço."
+        data_type: numeric
+      - name: base_3_effort
+        description: "LB03 Esforço."
+        data_type: numeric
+      - name: base_4_effort
+        description: "LB04 Esforço."
+        data_type: numeric
+      - name: base_5_effort
+        description: "LB05 Esforço."
+        data_type: numeric
+      - name: base_6_effort
+        description: "LB06 Esforço."
+        data_type: numeric
+      - name: base_7_effort
+        description: "LB07 Esforço."
+        data_type: numeric
+      - name: base_8_effort
+        description: "LB08 Esforço."
+        data_type: numeric
+      - name: base_9_effort
+        description: "LB09 Esforço."
+        data_type: numeric
+      - name: base_last_end
+        description: "Último término base."
+        data_type: datetime
+      - name: community_uid
+        description: "Identificador único do Grupo de trabalho."
+        data_type: int64
+      - name: created_by_id
+        description: "ID do criador."
+        data_type: int64
+      - name: customer_name
+        description: "Nome do cliente."
+        data_type: string
+      - name: estimated_end
+        description: "Término Estimado."
+        data_type: date
+      - name: base_10_effort
+        description: "LB10 Esforço."
+        data_type: numeric
+      - name: community_name
+        description: "Nome do Grupo de trabalho."
+        data_type: string
+      - name: parent_project
+        description: "Projeto pai."
+        data_type: string
+      - name: user_role_name
+        description: "Nível de Acesso do Usuário Responsável pelas Views."
+        data_type: string
+      - name: base_last_start
+        description: "Último início base."
+        data_type: datetime
+      - name: created_by_name
+        description: "Nome do criador."
+        data_type: string
+      - name: estimated_start
+        description: "Início Estimado."
+        data_type: date
+      - name: replanned_count
+        description: "Contagem de Replanejamentos."
+        data_type: int64
+      - name: time_actual_end
+        description: "Hora de Término Real."
+        data_type: datetime
+      - name: aggregate_effort
+        description: "Esforço Agregado."
+        data_type: numeric
+      - name: base_last_effort
+        description: "Esforço base último."
+        data_type: numeric
+      - name: created_by_email
+        description: "Email do criador."
+        data_type: string
+      - name: created_for_user
+        description: "Criado para Usuário."
+        data_type: boolean
+      - name: effort_deviation
+        description: "% Desvio de Esforço."
+        data_type: numeric
+      - name: effort_indicator
+        description: "Indicador de Esforço."
+        data_type: string
+      - name: estimated_effort
+        description: "Esforço Estimado."
+        data_type: numeric
+      - name: group_categories
+        description: "Categorias de grupo."
+        data_type: string
+      - name: is_critical_path
+        description: "Se está no Caminho Crítico."
+        data_type: boolean
+      - name: responsible_name
+        description: "Nome do Responsável."
+        data_type: string
+      - name: calculated_effort
+        description: "Esforço Calculado."
+        data_type: numeric
+      - name: completed_percent
+        description: "% Completo."
+        data_type: numeric
+      - name: finance_predicted
+        description: "Valor Previsto."
+        data_type: numeric
+      - name: responsible_email
+        description: "Email do Responsável."
+        data_type: string
+      - name: responsible_phone
+        description: Telefone do Responsável
+        data_type: string
+      - name: time_actual_start
+        description: Hora de Início Real
+        data_type: datetime
+      - name: created_by_user_id
+        description: ID do Solicitante
+        data_type: integer
+      - name: deadline_deviation
+        description: Desvio de prazo
+        data_type: integer
+      - name: deadline_indicator
+        description: Prazo
+        data_type: string
+      - name: time_estimated_end
+        description: Hora de Término Estimado.
+        data_type: datetime
+      - name: responsible_user_id
+        description: ID do Responsável
+        data_type: integer
+      - name: finance_accomplished
+        description: Valor Realizado
+        data_type: float
+      - name: time_estimated_start
+        description: Hora de Início Estimado.
+        data_type: datetime
+      - name: base_9_start
+        description: LB09 Início.
+        data_type: datetime
