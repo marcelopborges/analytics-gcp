@@ -1,5 +1,6 @@
 {{  
-    config(materialized='view')
+    config(materialized='view'),
+    tags=['intermediate','dialy']
 }}
 
 
